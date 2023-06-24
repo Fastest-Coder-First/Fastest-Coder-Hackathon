@@ -9,9 +9,7 @@ This repositorty contains solutions code generated for Fastest Code Hackathon.
 This is a weather report application that was created for the `Fastest Coder Hackathon`. It uses the `Open Weather API` to get the weather report for a given city name. The application takes the city name as an argument. The city name should be passed as `--city <city name>`. The application will print the weather report for the given city name. If the city name is not passed, then the application will print the help message. If the city name is unknown, then the application will show `None`. The application uses the `geopy library` to get the latitude and longitude of the given city name. The application uses the `dotenv library` to load the environment variables. The application uses the `requests library` to make the API call. The application uses the `argparse library` to parse the arguments. The application uses the `json library` to parse the json data. The application uses the `os library` to get the environment variables. The test cases are implemented using unittest module. 
 
 Here is a demo:
-
-[![Alternate Text](images/fastestcoderhackathon_demo.gif)](images/fastestcoderhackathon_demo.mp4 "Link Title")
-
+[![Alternate Text](images/fastestcoderhackathon_demo.png)](images/fastestcoderhackathon_demo.mp4 "Link Title")
 
 ## The Github Copilot
 
