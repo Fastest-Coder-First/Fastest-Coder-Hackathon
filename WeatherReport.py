@@ -88,8 +88,11 @@ class WeatherReport:
                 # append the weather data to the weather report
                 waether_report.append(weather_data)
             
-            # return the weather report
-            return waether_report
+                # return the weather report
+                return waether_report
+            else:
+                # raise exception that api key is not valid
+                raise Exception("Open Weather API key is not valid")
 
     # function to parse the weather json data
     def parse_weather_list(self, weather_list):
