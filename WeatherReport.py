@@ -5,6 +5,14 @@ from dotenv import load_dotenv
 import os
 import argparse
 
+"""
+This is a weather report application that was created for the Fastest Coder Hackathon. 
+This application uses the Open Weather API to get the weather report for a given city name.
+The application takes the city name as an argument.
+If the city name is unknown, then the application will show None.
+Please ensure that you have configured the Open Weather API key in the environment variable before running this application.
+"""
+
 # create a class for weather report
 class WeatherReport:
 

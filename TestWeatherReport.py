@@ -1,6 +1,20 @@
 import unittest
 from WeatherReport import WeatherReport
 
+"""
+This is a unit test class for WeatherReport. 
+This code was created for the Fastest Coder Hackathon.
+The test cases are implemented using unittest module.
+Please ensure that you have configured the Open Weather API key in the environment variable before running these test cases.
+
+It tests the following methods:
+    1. get_lat_lon
+    2. create_report
+
+To run this test, run the following command:
+    python -m unittest TestWeatherReport.py
+"""
+
 # unit test class for WeatherReport
 class TestWeatherReport(unittest.TestCase):
 
