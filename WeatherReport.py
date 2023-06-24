@@ -9,13 +9,24 @@ import argparse
 class WeatherReport:
 
     # initialize the class
-    def __init__(self, api_key):
-        # assign the api key
-        self.api_key = api_key
+    def __init__(self):
+        # load the environment variables
+        load_dotenv()
+
+        # get the api key from the environment variables
+        api_key = os.getenv("OPEN_WEATHER_API_KEY")
+
+        # verify whether api key is present
+        if not api_key or api_key.isspace():
+            # raise exception
+            raise Exception("Open Weather API key is not present")
+        else:
+            # assign api key to the class variable
+            self.api_key = api_key
 
         # base_url variable to store url
         self.base_url = "https://api.openweathermap.org/data/2.5/forecast?"
-
+        
     # function to return longitude and latitude of a given city name
     def get_lat_lon(self, city_name):
         # Initialize Nominatim API
@@ -189,14 +200,8 @@ def main():
             # get the city name from the arguments
             city_name = args.city
             
-            # load the environment variables
-            load_dotenv()
-
-            # get the api key from the environment variables
-            api_key = os.getenv("OPEN_WEATHER_API_KEY")
-
             # create an instance of the weather report
-            weather_report = WeatherReport(api_key)
+            weather_report = WeatherReport()
 
             # get the weather data for the given city name
             report = weather_report.create_report(city_name)

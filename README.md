@@ -26,7 +26,7 @@ This progrom requires storing the `API key` in runtime environment variable name
 
 ## How to run this program?
 
-First, ensure you have set the OPEN_WEATHER_API_KEY in your environment variable.
+First, ensure you have set the OPEN_WEATHER_API_KEY in your environment variable. In case if this is not configured then program will show `Open Weather API key is not present` exception.
 
 Then, on your development machine run: `python WeatherReport.py`. This will show you the command-line argument help. 
 
@@ -42,3 +42,8 @@ options:
   --city CITY  City name for which you want to get the weather report
 ```
 
+## How to run unit tests?
+
+First, ensure you have set the OPEN_WEATHER_API_KEY in your environment variable. In case if this is not configured then program will show `Open Weather API key is not present` exception.
+
+Then, on your development machine run: `python TestWeatherReport.py`. This will execute all the unit test cases and show test results. 
