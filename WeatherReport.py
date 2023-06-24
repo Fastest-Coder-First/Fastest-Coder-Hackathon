@@ -175,6 +175,46 @@ class WeatherReport:
         # return the weather data
         return weather_data
 
+    # function to create the formatted report
+    def create_formatted_report(self, city_name):
+
+        # get the weather report for the given city name
+        report = self.create_report(city_name)
+
+        # check whether report is none
+        if report is None:
+            # print none
+            return None
+        else:
+
+            # Initialize a string to store the formatted report
+            formatted_report = ""
+
+            # append the city name to the formatted report
+            formatted_report += "Weather report for city: {0}\n\n".format(city_name)
+
+            # iterate through the report
+            for data in report:
+                # iterate through the weather data
+                for weather_data in data:
+                    # append the formatted weather_data to the formatted report
+                    formatted_report += "Date Time: {0}\nTemperature: {1}\nPressure: {2}\nHumidity: {3}\nTemp Min: {4}\nTemp Max: {5}\nDescription: {6}\nSpeed: {7}\nDirection: {8}\nClouds: {9}\nVisibility: {10}\nPop: {11}\n\n".format(
+                        weather_data["date_time"],
+                        weather_data["temperature"],
+                        weather_data["pressure"],
+                        weather_data["humidity"],
+                        weather_data["temp_min"],
+                        weather_data["temp_max"],
+                        weather_data["description"],
+                        weather_data["speed"],
+                        weather_data["direction"],
+                        weather_data["clouds"],
+                        weather_data["visibility"],
+                        weather_data["pop"]
+                    )
+            # return the formatted report
+            return formatted_report
+
 # main function
 def main():
 
@@ -187,7 +227,7 @@ def main():
     example_of_use = """
     Example of usage: 
     
-    python WeatherReport.py --city \"New York\"
+    python WeatherReport.py --city \"New York\" --format
     """
 
     try:
@@ -198,7 +238,12 @@ def main():
 
         # add the argument for city name
         parser.add_argument("--city", help="City name for which you want to get the weather report")
+
+        # add the argument for version
         parser.add_argument("--version", action="version", version="%(prog)s 1.0")
+
+        # add the argument for formatted text output
+        parser.add_argument("--format", help="Format the output in a formatted text", action="store_true")
 
         # parse the arguments
         args = parser.parse_args()
@@ -215,11 +260,19 @@ def main():
             # create an instance of the weather report
             weather_report = WeatherReport()
 
-            # get the weather data for the given city name
-            report = weather_report.create_report(city_name)
+            # check the format argument
+            if args.format:    
+                # get the weather data for the given city name
+                report = weather_report.create_formatted_report(city_name)
 
-            # print the weather report
-            print(report)
+                # print the weather report as json string
+                print(report)
+            else:
+                # get the weather data for the given city name
+                report = weather_report.create_report(city_name)
+
+                # print the weather report as formatted text
+                print(report)
 
     except Exception as ex:
         # print the exception

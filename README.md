@@ -31,16 +31,17 @@ First, ensure you have set the OPEN_WEATHER_API_KEY in your environment variable
 Then, on your development machine run: `python WeatherReport.py`. This will show you the command-line argument help. 
 
 ```
-usage: WeatherReport.py [-h] [--city CITY]
+usage: WeatherReport.py [-h] [--city CITY] [--version] [--format]
 
-This is a weather report application that was created for the Fastest Coder Hackathon. It uses the Open Weather API
-to get the weather report for a given city name. The application takes the city name as an argument. If the city name
-is unknown, then the application will show None.
+This is a weather report application that was created for the Fastest Coder Hackathon. It uses the Open Weather API to get the weather report for a given city name. The application takes the city name as an argument. If the city name is unknown, then the application will show None.
 
 options:
   -h, --help   show this help message and exit
   --city CITY  City name for which you want to get the weather report
   --version    show program's version number and exit
+  --format     Format the output in a formatted text
+
+Example of usage: python WeatherReport.py --city "New York" --format
 ```
 
 ## How to run unit tests?
