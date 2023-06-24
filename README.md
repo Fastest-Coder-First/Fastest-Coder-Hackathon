@@ -15,4 +15,9 @@ This project uses the `Free` plan that provides access to 5 day forecast for any
 
 The `Call 5 day / 3 hour forecast data` API call template is in this format: `api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`
 
+## The argparse module 
+
+The proghram uses python argpass module to implement user-friendly command-line interfaces. For details refer here: `https://docs.python.org/3/library/argparse.html`.
+
+
 
