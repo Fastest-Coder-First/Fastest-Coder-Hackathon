@@ -159,12 +159,13 @@ def main():
     about_application = """
     This is a weather report application that was created for the Fastest Coder Hackathon. 
     It uses the Open Weather API to get the weather report for a given city name. 
-    The application takes the city name as an argument. If the city name is unknown, then the application will show None. 
+    The application takes the city name as an argument. 
+    If the city name is unknown, then the application will show None. 
     """
     example_of_use = """
     Example of usage: 
     
-    python fastestcoderhackathon.py --city \"New York\"
+    python WeatherReport.py --city \"New York\"
     """
 
     try:

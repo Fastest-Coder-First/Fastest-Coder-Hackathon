@@ -28,10 +28,14 @@ This progrom requires storing the `API key` in runtime environment variable name
 
 First, ensure you have set the OPEN_WEATHER_API_KEY in your environment variable.
 
-Then, on your development machine run: `python fastestcoderhackathon.py`. This will show you the command-line argument help. 
+Then, on your development machine run: `python WeatherReport.py`. This will show you the command-line argument help. 
 
 ```
-usage: fastestcoderhackathon.py [-h] [--city CITY]
+usage: WeatherReport.py [-h] [--city CITY]
+
+This is a weather report application that was created for the Fastest Coder Hackathon. It uses the Open Weather API
+to get the weather report for a given city name. The application takes the city name as an argument. If the city name
+is unknown, then the application will show None.
 
 options:
   -h, --help   show this help message and exit
