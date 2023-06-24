@@ -198,6 +198,7 @@ def main():
 
         # add the argument for city name
         parser.add_argument("--city", help="City name for which you want to get the weather report")
+        parser.add_argument("--version", action="version", version="%(prog)s 1.0")
 
         # parse the arguments
         args = parser.parse_args()

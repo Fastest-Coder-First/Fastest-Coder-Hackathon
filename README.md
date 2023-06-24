@@ -40,6 +40,7 @@ is unknown, then the application will show None.
 options:
   -h, --help   show this help message and exit
   --city CITY  City name for which you want to get the weather report
+  --version    show program's version number and exit
 ```
 
 ## How to run unit tests?
